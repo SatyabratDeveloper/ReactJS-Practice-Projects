@@ -1,11 +1,10 @@
+import { Container, Logo, LogoutBtn } from "../index";
+import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
-import authSlice from "../../store/authSlice.js";
-import { Container, Logo, LogoutBtn } from "../index.js";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
   const authStatus = useSelector((state) => state.auth.status);
-
   const navigate = useNavigate();
 
   const navItems = [
@@ -25,8 +24,8 @@ const Header = () => {
       active: !authStatus,
     },
     {
-      name: "All Post",
-      slug: "/all-post",
+      name: "All Posts",
+      slug: "/all-posts",
       active: authStatus,
     },
     {
